@@ -3,8 +3,9 @@ const {connection} =require("./db")
 const {userouters} =require("./route/userroute")
 const {varification}=require("./middelware/varification")
 const {postrote}=require("./route/postroute")
+const cors = require('cors')
 const app=express()
-
+app.use(cors())
 app.use(express.json())
 
 app.use("/users",userouters)
